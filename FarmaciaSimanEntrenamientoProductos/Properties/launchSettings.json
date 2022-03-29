@@ -1,0 +1,36 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:55403/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "api/values",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "FS_SQL_DB_SERVER": "localhost",
+        "FS_SQL_DB_DBNAME": "Entrenamiento_Web",
+        "FS_SQL_SUCURSAL_USER": "laincas",
+        "FS_SQL_SUCURSAL_PASSWORD": "laincas0296"
+      }
+    },
+    "FarmaciaSimanEntrenamientoProductos": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/values",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "FS_APPLICATION_NAME": "Farmacia Entrenamiento Productos Api",
+        "FS_APPLICATION_INSIGHT_KEY": "FS_APPLICATION_INSIGHT_KEY"
+
+      },
+      "applicationUrl": "http://localhost:55405/"
+    }
+  }
+}

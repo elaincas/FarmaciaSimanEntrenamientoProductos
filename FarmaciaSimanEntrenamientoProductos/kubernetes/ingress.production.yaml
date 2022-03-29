@@ -1,0 +1,29 @@
+﻿apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: entrenamiento-productos-api-production-path-strip
+  namespace: farmacia
+spec:
+  stripPrefix:
+    prefixes:
+      - /production/entrenamiento/productos-api
+    forceSlash: false
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: entrenamiento-productos-api-production-ingress
+  namespace: farmacia
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`api.farmacia.grupofarsiman.io`) && PathPrefix(`/production/entrenamiento/productos-api`)
+    kind: Rule
+    services:
+    - name: entrenamiento-productos-api-production-svc
+      port: 80
+    middlewares:
+      - name: entrenamiento-productos-api-production-path-strip
+  tls:
+    secretName: tls.api.farmacia.grupofarsiman.io

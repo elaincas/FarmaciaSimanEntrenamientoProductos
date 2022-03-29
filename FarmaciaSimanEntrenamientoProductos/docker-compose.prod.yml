@@ -1,0 +1,10 @@
+version: "3.2"
+services:
+  api:
+    environment:
+      - TZ=America/Tegucigalpa
+      - ASPNETCORE_ENVIRONMENT=Production
+    image: admin.docker.grupofarsiman.com:5000/farmacia/farmacia-entrenamiento-productos-api:latest
+    restart: always
+    ports:
+      - 3013:443
